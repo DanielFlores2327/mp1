@@ -1,13 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <title>MP1</title>
     </head>
+
     <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+        <header>
+            <nav class="navbar">
+                <h1>Prime Coaching</h1>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#offerings">Offerings</a></li>
+                    <li><a href="#perks">Perks</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="home" class="home">
+            <h1>Become a Crusher</h1>
+        
+            <video controls>
+                <source src="./assets/rounders.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section id="offerings" class="offerings">
+
+            <h1>Our Offerings</h1>
+
+            <div class="carousel">
+
+                <button class="carousel-button prev">&#10094;</button>
+
+                <div class="slides">
+
+                    <div class="slide">
+                        <h2>Hand Reviews</h2>
+                        <p>
+                            We offer one-hour hand review sessions to target the leaks in your game.
+                        </p>
+                    </div>
+
+                    <div class="slide">
+                        <h2>Personal Coaches</h2>
+                        <p>
+                            We assign personal coaches who were all former high-stakes pro to every member.
+                        </p>
+                    </div>
+
+                    <div class="slide">
+                        <h2>Community</h2>
+                        <p>
+                            We also offer a community and discord for like-minded members to discuss hands, locations, etc.
+                        </p>
+                    </div>
+
+                </div>
+
+                <button class="carousel-button next">&#10095;</button>
+
+            </div>
+
+        </section>
+
+        <section id="perks" class="perks">
+            <h1>Why Choose Prime Coaching?</h1>
+        
+            <div class="perk-container">
+        
+                <div class="perk">
+                    <i class="fa fa-trophy"></i>
+                    <h2>Winning</h2>
+                    <p>
+                        Our coaches are winners. Our students are winners. And we guarantee you will win a MTT in your first year.
+                    </p>
+                </div>
+        
+                <div class="perk">
+                    <i class="fa fa-users"></i>
+                    <h2>Improvement</h2>
+                    <p>
+                        You will become a better player and have a stronger mental game.
+                    </p>
+                </div>
+        
+                <div class="perk">
+                    <i class="fa fa-line-chart"></i>
+                    <h2>Live Profit Tracker</h2>
+                    <p>
+                        Measure your bankroll and winrate as you improve.
+                    </p>
+                </div>
+        
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h1>About Prime Coaching</h1>
+        
+            <p>
+                Prime Coaching has an incredibly unique, exploitative strategy toward poker.
+            </p>
+        
+            <div class="about-buttons">
+                <button class="modal-button" data-modal="coaches-modal">
+                    GTO Doesn't Matter
+                </button>
+        
+                <button class="modal-button" data-modal="philosophy-modal">
+                    Spot Experts
+                </button>
+        
+                <button class="modal-button" data-modal="faq-modal">
+                    Exploits > Fixing Leaks
+                </button>
+            </div>
+        
+            <div id="coaches-modal" class="modal">
+                <div class="modal-content">
+                    <button class="close-modal">&times;</button>
+                    <h2>GTO Doesn't Matter</h2>
+                    <p>
+                        We heavily lean into exploits and never have our students touch the solver until they are already crushers. Balance is the enemy of profit.
+                    </p>
+                </div>
+            </div>
+        
+            <div id="philosophy-modal" class="modal">
+                <div class="modal-content">
+                    <button class="close-modal">&times;</button>
+                    <h2>Spot Experts</h2>
+                    <p>
+                        We have coaches that each specialize in specific spots such as 4-bet pots, OOP in wide vs. wide config, and short-stack ICM. Specializing is way better than generalization for coaching and our coaches spend years and years specializing.
+                    </p>
+                </div>
+            </div>
+        
+            <div id="faq-modal" class="modal">
+                <div class="modal-content">
+                    <button class="close-modal">&times;</button>
+                    <h2>Exploits > Leaks</h2>
+                    <p>
+                        We train our students to focus on exploiting the public leaks rather than fixing their own leaks. Eventually, you do want to fix your own leaks but students will make so much more playing an exploitable style.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h1>Find Us Online</h1>
+
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </footer>
     </body>
 </html>

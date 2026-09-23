@@ -1,1 +1,671 @@
 /* Your SCSS here. */
+$scheme-1: #171414;
+$scheme-2: #EFBF04;
+$standard: white;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 15px 40px;
+
+    background-color: $scheme-1;
+
+    transition: padding 0.3s ease;
+}
+
+.navbar h1 {
+    margin: 0;
+    color: $standard;
+    transition: font-size 0.3s ease;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 30px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: $standard;
+    text-decoration: none;
+    transition: font-size 0.3s ease;
+}
+
+.navbar a:hover {
+    color: $scheme-2;
+}
+
+.navbar a.active {
+    color: $scheme-2;
+    border-bottom: 2px solid $scheme-2;
+}
+
+.navbar.small {
+    padding: 10px 40px;
+}
+
+.navbar.small h1 {
+    font-size: 24px;
+}
+
+.navbar.small a {
+    font-size: 16px;
+}
+
+section {
+    width: 100%;
+    min-height: 75vh;
+    padding: 80px 40px;
+
+    text-align: center;
+    scroll-margin-top: 0;
+}
+
+section h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 36px;
+}
+
+section p {
+    max-width: 700px;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
+.home {
+    background-color: $scheme-2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.home video {
+    width: min(600px, 90vw);
+    height: auto;
+}
+
+.offerings {
+    background-color: $standard;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Carousel */
+
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto 0;
+    overflow: hidden;
+
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+    flex: 0 0 100%;
+    min-height: 350px;
+
+    padding: 100px 80px;
+
+    background-color: $scheme-2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slides {
+    display: flex;
+
+    transition: transform 0.5s ease;
+}
+.carousel-button {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    border: none;
+    background: none;
+
+    font-size: 40px;
+    cursor: pointer;
+
+    color: $scheme-1;
+}
+
+.carousel-button:hover {
+    color: $standard;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+
+/* Perks */
+
+.perks {
+    min-height: 75vh;
+    padding: 80px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $scheme-1;
+    color: $standard;
+    text-align: center;
+}
+
+.perk-container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin-top: 30px;
+}
+
+.perk {
+    flex: 1;
+    min-height: 280px;
+
+    padding: 45px 35px;
+
+    background-color: $scheme-2;
+    color: $scheme-1;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+    transition: transform 0.3s ease;
+}
+
+.perk:hover {
+    transform: translateY(-8px);
+}
+
+.perk i {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.perks h1 {
+    margin-bottom: 50px;
+}
+
+.perk h2 {
+    margin-bottom: 15px;
+}
+
+.perk p {
+    line-height: 1.6;
+}
+
+.about {
+    background-color: $scheme-1;
+    color: $standard;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about {
+    position: relative;
+
+    min-height: 75vh;
+    padding: 80px 40px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background-image: url("../assets/pokercoaching.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: $standard;
+}
+
+/* Dark overlay so text is easier to read */
+.about::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Keep About content above the overlay */
+.about h1,
+.about p,
+.about-buttons {
+    position: relative;
+    z-index: 1;
+}
+
+.about h1 {
+    margin: 0 0 20px;
+
+    font-size: 42px;
+}
+
+.about p {
+    max-width: 700px;
+
+    margin: 0;
+
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+
+/* Modal buttons */
+
+.about-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+.modal-button {
+    min-width: 170px;
+
+    padding: 15px 30px;
+
+    border: 2px solid $scheme-2;
+    border-radius: 6px;
+
+    background-color: $scheme-2;
+    color: $scheme-1;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.modal-button:hover {
+    transform: translateY(-4px);
+
+    background-color: $standard;
+}
+
+
+/* Modal */
+
+.modal {
+    display: none;
+
+    position: fixed;
+    z-index: 2000;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.75);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 90%;
+    max-width: 650px;
+
+    padding: 50px 45px;
+
+    background-color: $standard;
+    color: $scheme-1;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 30px;
+}
+
+.modal-content p {
+    max-width: none;
+
+    line-height: 1.7;
+}
+
+
+/* Close button */
+
+.close-modal {
+    position: absolute;
+
+    top: 10px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: none;
+    color: $scheme-1;
+
+    font-size: 30px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.close-modal:hover {
+    background-color: #eeeeee;
+}
+
+
+/* Modal animation */
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+    .about {
+        min-height: 70vh;
+        padding: 60px 20px;
+
+        background-attachment: scroll;
+    }
+
+    .about h1 {
+        font-size: 32px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+    .about-buttons {
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 300px;
+
+        gap: 15px;
+    }
+
+    .modal-button {
+        width: 100%;
+    }
+
+    .modal-content {
+        padding: 40px 25px;
+    }
+
+    .modal-content h2 {
+        font-size: 25px;
+    }
+}
+
+
+/* Tablet / Mobile */
+
+@media (max-width: 768px) {
+
+    /* Navbar */
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar h1 {
+        font-size: 24px;
+    }
+
+    .navbar ul {
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .navbar.small {
+        padding: 10px 20px;
+    }
+
+    .navbar.small h1 {
+        font-size: 20px;
+    }
+
+    .navbar.small a {
+        font-size: 13px;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 50px 20px;
+    }
+
+
+    /* Home */
+
+    .home video {
+        width: 90vw;
+    }
+
+
+    /* Carousel */
+
+    .carousel {
+        width: 100%;
+    }
+
+    .slide {
+        min-height: 250px;
+        padding: 70px 45px;
+    }
+
+    .carousel-button {
+        font-size: 30px;
+    }
+
+    .prev {
+        left: 5px;
+    }
+
+    .next {
+        right: 5px;
+    }
+
+
+    /* Perks */
+
+    .perks {
+        padding: 60px 20px;
+    }
+
+    .perk-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .perk {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+footer {
+    width: 100%;
+    padding: 50px;
+
+    background-color: $scheme-1;
+    color: $standard;
+
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    padding: 40px 20px;
+
+    background-color: $scheme-1;
+    color: $standard;
+
+    text-align: center;
+}
+
+footer h1 {
+    margin-bottom: 25px;
+}
+
+footer .fa {
+    display: inline-flex;
+
+    width: 55px;
+    height: 55px;
+
+    margin: 0 5px;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28px;
+
+    text-decoration: none;
+
+    border-radius: 50%;
+
+    transition: transform 0.2s ease;
+}
+
+footer .fa:hover {
+    transform: translateY(-4px);
+}
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    background: darkblue;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: lightskyblue;
+    color: white;
+  }
+
+  .fa-youtube {
+    background: red;
+    color: white;
+  }
+
+  .fa-instagram {
+    background: navy;
+    color: white;
+  }
